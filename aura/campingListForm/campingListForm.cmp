@@ -1,0 +1,27 @@
+<aura:component description="campingListForm">
+    <aura:attribute name="newItem" type="Camping_Item__c" default="{ 'sobjectType': 'Camping_Item__c',
+                        'Name':'', 'Quantity__c': 0, 'Price__c': 0, 'Packed__c': false }"/>
+    <aura:registerEvent name="addItem" type="c:addItemEvent"/>
+    <div aria-labelledby="newcampingform">
+        <!-- BOXED AREA -->
+        <fieldset class="slds-box slds-theme_default slds-container_small slds-container_center">
+            <legend id="newcampingform" class="slds-text-heading_small slds-p-vertical_medium">
+                Add Camping Item
+            </legend>
+
+            <!--FORM-->
+            <form class="slds-form_stacked">
+                <lightning:input aura:id="campingform" name="campingItemName" label="Name" type="text"
+                                 value="{!v.newItem.Name}" required="true"/>
+                <lightning:input aura:id="campingform" name="campingItemPrice" label="Price" type="number"
+                                 value="{!v.newItem.Price__c}" required="true" formatter="currency"/>
+                <lightning:input aura:id="campingform" name="campingItemQuantity" label="Quantity"  type="number"
+                                 required="true" min="1" messageWhenRangeUnderflow="Enter minimum 1 Quantity"
+                                 value="{!v.newItem.Quantity__c}"/>
+                <lightning:input name="campingItemPacked" label="Packed" type="checkbox"
+                                 checked="{!v.newItem.Packed__c}" value="{!v.newItem.Packed__c}"/>
+                <lightning:button aura:id="submit" label="Submit" onclick="{!c.clickCreateItem}" />
+            </form>
+        </fieldset>
+    </div>
+</aura:component>

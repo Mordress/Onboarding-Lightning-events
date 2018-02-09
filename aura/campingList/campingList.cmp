@@ -1,0 +1,22 @@
+<aura:component description="campingList" controller="CampingListController">
+    <aura:attribute name="items" type="Camping_Item__c[]"/>
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:handler name="addItem" event="c:addItemEvent" action="{!c.handleAddItem}"/>
+
+    <!--FORM-->
+    <c:campingListForm/>
+
+    <hr/>
+
+    <div class="slds-grid slds-wrap">
+        <aura:iteration items="{!v.items}" var="itm">
+            <fieldset class="slds-box slds-theme_default slds-col slds-size_1-of-8 slds-container_center slds-m-vertical_medium">
+                <c:campingListItem item="{!itm}"/>
+            </fieldset>
+        </aura:iteration>
+    </div>
+
+    <div class="slds-container_small slds-container_center">
+        <lightning:button aura:id="purge" label="PURGE" onclick="{!c.purge}" class="slds-align_absolute-center slds-theme_warning"/>
+    </div>
+</aura:component>
