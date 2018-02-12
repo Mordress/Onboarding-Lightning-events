@@ -4,7 +4,7 @@
             <lightning:icon iconName="action:goal" alternativeText="icon"/>
         </lightning:layoutItem>
         <lightning:layoutItem padding="horizontal-small">
-            <h1>Camping List</h1>
+            <h1 class="slds-page-header__title">Camping List</h1>
         </lightning:layoutItem>
     </lightning:layout>
 </aura:component>

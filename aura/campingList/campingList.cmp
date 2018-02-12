@@ -6,6 +6,19 @@
     <aura:handler name="strike_evt_modalPrimaryButtonClicked" event="c:strike_evt" action="{!c.handlePrimaryButtonClick}"/>
     <aura:handler name="changedItem" event="c:addItemEvent" action="{!c.handleChangeItem}"/>
 
+    <c:strike_modal
+            aura:id="purgeconfirm"
+            title="Confirmation"
+            variant="warning"
+            primaryButtonLabel="Ok"
+            secondaryButtonLabel="Cancel"
+            showHeader="true"
+            showFooter="true"
+            showClose="true"
+            showModal="{!v.toggleModal}">
+        <p class="slds-text-align_center">Purge all camping items?</p>
+    </c:strike_modal>
+
     <!--FORM-->
     <c:campingListForm/>
 
@@ -23,23 +36,6 @@
         <lightning:button aura:id="purge" label="PURGE" onclick="{!c.purge}" class="slds-align_absolute-center slds-theme_warning"/>
     </div>
 
-    <!--TODO SOMETHING HERE-->
-    <c:strike_modal
-            aura:id="purgeconfirm"
-            title="Confirmation"
-            variant="warning"
-            primaryButtonLabel="Ok"
-            secondaryButtonLabel="Cancel"
-            showHeader="true"
-            showFooter="true"
-            showClose="true"
-            showModal="{!v.toggleModal}">
-        <p class="slds-text-align_center">Purge all camping items?</p>
-    </c:strike_modal>
-
-
-
     <div class="slds-container_center slds-container_small">
-
     </div>
 </aura:component>
