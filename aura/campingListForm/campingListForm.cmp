@@ -20,7 +20,7 @@
                                  value="{!v.newItem.Quantity__c}"/>
                 <lightning:input name="campingItemPacked" label="Packed" type="checkbox"
                                  checked="{!v.newItem.Packed__c}" value="{!v.newItem.Packed__c}"/>
-                <lightning:button aura:id="submit" label="Submit" onclick="{!c.clickCreateItem}" />
+                <lightning:button aura:id="submit" label="Submit" onclick="{!c.clickCreateItem}" class="slds-align_absolute-center"/>
             </form>
         </fieldset>
     </div>

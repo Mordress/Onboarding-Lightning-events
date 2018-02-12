@@ -10,10 +10,7 @@
         // If we pass error checking, do some real work
         if(validCampingItem){
             let newCampingItem = component.get("v.newItem");
-            console.log(newCampingItem);
             helper.createItem(component, newCampingItem);
-            component.set("v.newItem", { 'sobjectType': 'Camping_Item__c',
-                'Name':'', 'Quantity__c': 0, 'Price__c': 0, 'Packed__c': false });
         }
     },
 

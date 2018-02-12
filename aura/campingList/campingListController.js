@@ -18,21 +18,37 @@
         $A.enqueueAction(action);
     },
 
-
-    purge: function (component, event, helper) {
+    handlePrimaryButtonClick: function(component, event, helper) {
         let action = component.get("c.purgeItems");
         action.setCallback(this, function (response) {
             let state = response.getState();
             if (state === "SUCCESS") {
-                console.log("ALL ITEMS DELETED!");
+                console.warn("ALL ITEMS DELETED!");
                 component.set("v.items", []);
             }
         });
         $A.enqueueAction(action);
+        component.set('v.toggleModal', false);
     },
+
+    purge: function (component, event, helper) {
+        //let purgeConfirmationWindow = component.find("purgeconfirm");
+        component.set('v.toggleModal', true);
+    },
+
     handleAddItem: function (component, event, helper) {
         let newCampingItem = event.getParam("item");
-        console.log(newCampingItem);
-        helper.createCampingItem(component, newCampingItem);
+
+        let action = component.get("c.saveItem");
+        action.setParams({"campingItem": newCampingItem});
+        action.setCallback(this, function (response) {
+            let state = response.getState();
+            if (state === "SUCCESS") {
+                let campingItems = component.get("v.items");
+                campingItems.push(response.getReturnValue());
+                component.set("v.items", campingItems);
+            }
+        });
+        $A.enqueueAction(action);
     }
 })

@@ -1,8 +1,10 @@
 <aura:component description="campingListItem">
     <aura:attribute name="item" type="Camping_Item__c" required="true"/>
-    <h3>Name:&nbsp;<lightning:formattedText value="{!v.item.Name}"/></h3>
+    <!--<h3>Name:&nbsp;<lightning:formattedText value="{!v.item.Name}"/></h3>-->
+    <h3>Name:&nbsp;<c:strike_badge label="{!v.item.Name}" theme="warning" /></h3>
     <h3>Price:&nbsp;<lightning:formattedNumber value="{!v.item.Price__c}" style="currency" currencyCode="USD"/></h3>
     <h3>Quantity:&nbsp;<lightning:formattedNumber value="{!v.item.Quantity__c}"/></h3>
     <p><lightning:input name="Packed" label="Packed" type="toggle" checked="{!v.item.Packed__c}"/></p>
     <p><lightning:button label="Packed!" onclick="{!c.packItem}"/></p>
+
 </aura:component>

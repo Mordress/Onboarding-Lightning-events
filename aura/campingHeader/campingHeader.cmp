@@ -1,5 +1,5 @@
 <aura:component description="campingHeader">
-    <lightning:layout class="slds-page-header">
+    <lightning:layout class="slds-page-header slds-align_absolute-center">
         <lightning:layoutItem>
             <lightning:icon iconName="action:goal" alternativeText="icon"/>
         </lightning:layoutItem>
