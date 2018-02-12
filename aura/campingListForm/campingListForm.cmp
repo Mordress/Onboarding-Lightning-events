@@ -13,7 +13,7 @@
             <form class="slds-form_stacked">
                 <lightning:input aura:id="campingform" name="campingItemName" label="Name" type="text"
                                  value="{!v.newItem.Name}" required="true"/>
-                <lightning:input aura:id="campingform" name="campingItemPrice" label="Price" type="number"
+                <lightning:input aura:id="campingform" name="campingItemPrice" label="Price" type="number" min="0"
                                  value="{!v.newItem.Price__c}" required="true" formatter="currency"/>
                 <lightning:input aura:id="campingform" name="campingItemQuantity" label="Quantity"  type="number"
                                  required="true" min="1" messageWhenRangeUnderflow="Enter minimum 1 Quantity"

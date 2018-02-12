@@ -4,6 +4,7 @@
     <aura:handler name="addItem" event="c:addItemEvent" action="{!c.handleAddItem}"/>
     <aura:attribute name="toggleModal" type="Boolean" default="{!false}"/>
     <aura:handler name="strike_evt_modalPrimaryButtonClicked" event="c:strike_evt" action="{!c.handlePrimaryButtonClick}"/>
+    <aura:handler name="changedItem" event="c:addItemEvent" action="{!c.handleChangeItem}"/>
 
     <!--FORM-->
     <c:campingListForm/>

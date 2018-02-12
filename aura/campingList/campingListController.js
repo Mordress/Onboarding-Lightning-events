@@ -19,6 +19,7 @@
     },
 
     handlePrimaryButtonClick: function(component, event, helper) {
+        console.log(event);
         let action = component.get("c.purgeItems");
         action.setCallback(this, function (response) {
             let state = response.getState();
@@ -37,11 +38,7 @@
     },
 
     handleAddItem: function (component, event, helper) {
-        let newCampingItem = event.getParam("item");
-
-        let action = component.get("c.saveItem");
-        action.setParams({"campingItem": newCampingItem});
-        action.setCallback(this, function (response) {
+        helper.saveItem(component, event, function(response) {
             let state = response.getState();
             if (state === "SUCCESS") {
                 let campingItems = component.get("v.items");
@@ -49,6 +46,13 @@
                 component.set("v.items", campingItems);
             }
         });
-        $A.enqueueAction(action);
-    }
+    },
+    handleChangeItem: function (component, event, helper) {
+        helper.saveItem(component, event, function(response) {
+            let state = response.getState();
+            if (state === "SUCCESS") {
+                console.log("successfully updated!");
+            }
+        });
+    },
 })
