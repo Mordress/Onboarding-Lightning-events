@@ -27,7 +27,7 @@ public with sharing class CampingListController {
         for (String fieldToCheck : campingAccessFields) {
             if (!checkOperationType(m.get(fieldToCheck), operation)) {
                 System.NoAccessException exc = new System.NoAccessException();
-                exc.setMessage('Field with throuble: ' + fieldToCheck + '. Operation with throuble: ' + operation);
+                exc.setMessage('Field with exception: ' + fieldToCheck + '. Operation with exception: ' + operation);
                 throw exc;
                 return false;
             }
@@ -58,7 +58,6 @@ public with sharing class CampingListController {
     public static List<Camping_Item__c> getItems() {
         return checkPermissionRead() ? CampingListController.get_UNSAFE_Items() : null;
     }
-
     @AuraEnabled
     public static Camping_Item__c saveItem(Camping_Item__c campingItem) {
         if (checkPermissionUpdate()) {
@@ -67,7 +66,6 @@ public with sharing class CampingListController {
         }
         return null;
     }
-
     @AuraEnabled
     public static Boolean purgeItems() {
         if (!checkPermissionDelete()) {

@@ -32,9 +32,11 @@
         </aura:iteration>
     </div>
 
-    <div class="slds-container_small slds-container_center">
-        <lightning:button aura:id="purge" label="PURGE" onclick="{!c.purge}" class="slds-align_absolute-center slds-theme_warning"/>
-    </div>
+    <aura:if isTrue="{!v.items.length > 0}">
+        <div class="slds-container_small slds-container_center">
+            <lightning:button aura:id="purge" label="PURGE" onclick="{!c.purge}" class="slds-align_absolute-center slds-theme_warning"/>
+        </div>
+    </aura:if>
 
     <div class="slds-container_center slds-container_small">
     </div>
