@@ -22,7 +22,9 @@
     <!--FORM-->
     <c:campingListForm/>
 
-    <hr/>
+    <aura:if isTrue="{!v.items.length > 0}">
+        <hr/>
+    </aura:if>
 
     <div class="slds-grid slds-wrap">
         <aura:iteration items="{!v.items}" var="itm">
@@ -38,6 +40,4 @@
         </div>
     </aura:if>
 
-    <div class="slds-container_center slds-container_small">
-    </div>
 </aura:component>

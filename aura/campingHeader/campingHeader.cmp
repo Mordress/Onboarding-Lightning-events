@@ -1,10 +1,10 @@
 <aura:component description="campingHeader">
     <lightning:layout class="slds-page-header slds-align_absolute-center">
         <lightning:layoutItem>
-            <lightning:icon iconName="action:goal" alternativeText="icon"/>
+            <img src="{!$Resource.assets + '/assets/img/camp.png'}" alt="Camping bag" height="128" width="128"/>
         </lightning:layoutItem>
         <lightning:layoutItem padding="horizontal-small">
-            <h1 class="slds-page-header__title">Camping List</h1>
+            <h1 class="slds-text-heading_large">Camping App</h1>
         </lightning:layoutItem>
     </lightning:layout>
 </aura:component>
