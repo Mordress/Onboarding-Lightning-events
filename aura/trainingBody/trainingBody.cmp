@@ -1,0 +1,3 @@
+<aura:component description="trainingBody">
+    <p>Hello form trainingBody</p>
+</aura:component>

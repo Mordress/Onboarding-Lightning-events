@@ -1,0 +1,3 @@
+<aura:component description="trainingHeader">
+    <h2>Hello from training Header</h2>
+</aura:component>
